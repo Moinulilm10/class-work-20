@@ -24,6 +24,31 @@ const User = {
     }
   },
 
+  async updateUser({ id, name, email, password }) {
+    const params = {
+      TableName: TABLE_NAME,
+      Key: { id },
+      UpdateExpression:
+        "set #name = :name, email = :email, password = :password",
+      ExpressionAttributeNames: {
+        "#name": "name",
+      },
+      ExpressionAttributeValues: {
+        ":name": name,
+        ":email": email,
+        ":password": password,
+      },
+      ReturnValues: "UPDATED_NEW",
+    };
+    try {
+      const data = await dynamodbClient.update(params).promise();
+      return data.Attributes;
+    } catch (error) {
+      console.error("Error updating user:", error);
+      throw new Error("Error updating user");
+    }
+  },
+
   async deleteUser(id) {
     const params = {
       TableName: TABLE_NAME,
