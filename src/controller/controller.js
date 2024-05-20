@@ -20,3 +20,18 @@ exports.createUser = async (ctx) => {
     ctx.body = { error: "Failed to add user" };
   }
 };
+
+exports.deleteUser = async (ctx) => {
+  const { id } = ctx.params;
+
+  try {
+    await User.deleteUser(id);
+    console.log("User deleted successfully");
+    ctx.status = 200;
+    ctx.body = { message: "User deleted successfully" };
+  } catch (error) {
+    console.error("Failed to delete user:", error);
+    ctx.status = 500;
+    ctx.body = { error: "Failed to delete user" };
+  }
+};
