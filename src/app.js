@@ -13,8 +13,6 @@ app.use(bodyParser());
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-router.use("/user", userRouter);
-
 app.listen(3000, () => {
   console.log(`Server is running ${PORT}`);
 });
