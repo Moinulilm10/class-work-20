@@ -51,3 +51,30 @@ exports.deleteUser = async (ctx) => {
     ctx.body = { error: "Failed to delete user" };
   }
 };
+
+exports.getUserByEmail = async (ctx) => {
+  // console.log(ctx.params);
+  const { email } = ctx.params;
+
+  if (!email) {
+    ctx.status = 400;
+    ctx.body = { error: "Email parameter is required" };
+    return;
+  }
+
+  try {
+    const user = await User.getByEmail(email);
+    if (user.length === 0) {
+      ctx.status = 404;
+      ctx.body = { message: "User not found" };
+    } else {
+      console.log("User retrieved successfully");
+      ctx.status = 200;
+      ctx.body = { message: "User retrieved successfully", user };
+    }
+  } catch (error) {
+    console.error("Failed to retrieve user by email:", error);
+    ctx.status = 500;
+    ctx.body = { error: "Failed to retrieve user by email" };
+  }
+};

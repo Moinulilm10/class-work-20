@@ -1,7 +1,7 @@
 const { dynamodbClient } = require("../config/aws");
 
 const TABLE_NAME = "users";
-const GSI_NAME = "email_index";
+const GSI_EMAIL = "email-index";
 
 const User = {
   async createUser({ name, email, password }) {
@@ -60,6 +60,24 @@ const User = {
     } catch (error) {
       console.error("Error deleting user:", error);
       throw new Error("Error deleting user");
+    }
+  },
+
+  async getByEmail(email) {
+    const params = {
+      TableName: TABLE_NAME,
+      IndexName: GSI_EMAIL,
+      KeyConditionExpression: "email = :email",
+      ExpressionAttributeValues: {
+        ":email": email,
+      },
+    };
+    try {
+      const data = await dynamodbClient.query(params).promise();
+      return data.Items;
+    } catch (error) {
+      console.error("Failed retrieving user by email:", error);
+      throw new Error("Failed retrieving user by email");
     }
   },
 };
