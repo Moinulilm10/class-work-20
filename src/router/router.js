@@ -7,12 +7,14 @@ const {
   updateUser,
   getUserByEmail,
   getUserByPhone,
+  getAllUsers,
 } = require("../controller/controller");
 
 const app = new Koa();
 app.use(bodyParser());
 const router = new Router();
 
+router.get("/users", getAllUsers);
 router.post("/user", createUser);
 router.put("/user/:id", updateUser);
 router.delete("/user/:id", deleteUser);

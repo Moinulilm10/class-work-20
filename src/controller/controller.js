@@ -109,3 +109,16 @@ exports.getUserByPhone = async (ctx) => {
     ctx.body = { error: "Failed to retrieve user by phone" };
   }
 };
+
+exports.getAllUsers = async (ctx) => {
+  try {
+    const users = await User.getAllUsers();
+    console.log("Users retrieved successfully");
+    ctx.status = 200;
+    ctx.body = { message: "Users retrieved successfully", users };
+  } catch (error) {
+    console.error("Failed to retrieve users:", error);
+    ctx.status = 500;
+    ctx.body = { error: "Failed to retrieve users" };
+  }
+};

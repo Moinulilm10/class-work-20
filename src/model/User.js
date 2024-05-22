@@ -101,6 +101,20 @@ const User = {
       throw new Error("Failed retrieving user by phone");
     }
   },
+
+  async getAllUsers() {
+    try {
+      const params = {
+        TableName: TABLE_NAME,
+      };
+
+      const data = await dynamodbClient.scan(params).promise();
+      return data.Items;
+    } catch (error) {
+      console.error("Failed to retrieve users:", error);
+      throw new Error("Failed to retrieve users");
+    }
+  },
 };
 
 module.exports = User;
