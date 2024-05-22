@@ -2,9 +2,10 @@ const { dynamodbClient } = require("../config/aws");
 
 const TABLE_NAME = "users";
 const GSI_EMAIL = "email-index";
+const GSI_PHONE = "phone-index";
 
 const User = {
-  async createUser({ name, email, password }) {
+  async createUser({ name, email, phone, password }) {
     const id = Date.now().toString();
     const params = {
       TableName: TABLE_NAME,
@@ -12,12 +13,13 @@ const User = {
         id,
         name,
         email,
+        phone,
         password,
       },
     };
     try {
       await dynamodbClient.put(params).promise();
-      return { id, name, email, password };
+      return { id, name, email, phone, password };
     } catch (error) {
       console.error("Failed to add user:", error);
       throw new Error("Error adding user");

@@ -1,16 +1,16 @@
 const User = require("../model/User");
 
 exports.createUser = async (ctx) => {
-  const { name, email, password } = ctx.request.body;
+  const { name, email, phone, password } = ctx.request.body;
 
-  if (!name || !email || !password) {
+  if (!name || !email || !phone || !password) {
     ctx.status = 400;
     ctx.body = { error: "Missing required fields" };
     return;
   }
 
   try {
-    const newUser = await User.createUser({ name, email, password });
+    const newUser = await User.createUser({ name, email, phone, password });
     console.log("User added successfully");
     ctx.status = 201;
     ctx.body = { message: "User created successfully", newUser };
