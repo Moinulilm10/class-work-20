@@ -84,3 +84,28 @@ exports.getUserByEmail = async (ctx) => {
     ctx.body = { error: "Failed to retrieve user by email" };
   }
 };
+
+exports.getUserByPhone = async (ctx) => {
+  const { phone } = ctx.params;
+
+  if (!phone) {
+    ctx.status = 400;
+    ctx.body = { error: "Phone parameter is required" };
+    return;
+  }
+
+  try {
+    const data = await User.getByPhone(phone);
+    if (data.length === 0) {
+      ctx.status = 404;
+      ctx.body = { error: "User not found" };
+      return;
+    }
+    ctx.status = 200;
+    ctx.body = data;
+  } catch (err) {
+    console.error("Failed to retrieve user by phone:", err);
+    ctx.status = 500;
+    ctx.body = { error: "Failed to retrieve user by phone" };
+  }
+};

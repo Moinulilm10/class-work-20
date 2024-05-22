@@ -6,6 +6,7 @@ const {
   deleteUser,
   updateUser,
   getUserByEmail,
+  getUserByPhone,
 } = require("../controller/controller");
 
 const app = new Koa();
@@ -16,5 +17,6 @@ router.post("/user", createUser);
 router.put("/user/:id", updateUser);
 router.delete("/user/:id", deleteUser);
 router.get("/user/:email", getUserByEmail);
+router.get("/user/:phone", getUserByPhone);
 
 module.exports = router.routes();

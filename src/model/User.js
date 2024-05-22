@@ -83,6 +83,24 @@ const User = {
       throw new Error("Failed retrieving user by email");
     }
   },
+
+  async getByPhone(phone) {
+    const params = {
+      TableName: TABLE_NAME,
+      IndexName: GSI_PHONE,
+      KeyConditionExpression: "phone = :phone",
+      ExpressionAttributeValues: {
+        ":phone": phone,
+      },
+    };
+    try {
+      const data = await dynamodbClient.query(params).promise();
+      return data.Items;
+    } catch (error) {
+      console.error("Failed retrieving user by phone:", error);
+      throw new Error("Failed retrieving user by phone");
+    }
+  },
 };
 
 module.exports = User;
