@@ -23,10 +23,16 @@ exports.createUser = async (ctx) => {
 
 exports.updateUser = async (ctx) => {
   const { id } = ctx.params;
-  const { name, email, password } = ctx.request.body;
+  const { name, email, phone, password } = ctx.request.body;
 
   try {
-    const updatedData = await User.updateUser({ id, name, email, password });
+    const updatedData = await User.updateUser({
+      id,
+      name,
+      email,
+      phone,
+      password,
+    });
     console.log("User updated successfully");
     ctx.status = 200;
     ctx.body = { message: "User updated successfully", updatedData };

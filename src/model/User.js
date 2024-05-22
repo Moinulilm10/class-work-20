@@ -26,18 +26,19 @@ const User = {
     }
   },
 
-  async updateUser({ id, name, email, password }) {
+  async updateUser({ id, name, email, phone, password }) {
     const params = {
       TableName: TABLE_NAME,
       Key: { id },
       UpdateExpression:
-        "set #name = :name, email = :email, password = :password",
+        "set #name = :name, email = :email, phone = :phone, password = :password",
       ExpressionAttributeNames: {
         "#name": "name",
       },
       ExpressionAttributeValues: {
         ":name": name,
         ":email": email,
+        ":phone": phone,
         ":password": password,
       },
       ReturnValues: "UPDATED_NEW",
