@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import About from "./components/About/About";
+import Contact from "./components/Contact/Contact";
+import Experience from "./components/Experience/Experience";
 import Footer from "./components/Footer";
 import Home from "./components/Home/Home";
 import NavBar from "./components/Navbar";
@@ -39,6 +41,8 @@ function App() {
           <Route path="/project" element={<Projects />} />
           <Route path="/about" element={<About />} />
           <Route path="/resume" element={<Resume />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
