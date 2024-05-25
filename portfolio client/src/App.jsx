@@ -11,6 +11,7 @@ import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Experience from "./components/Experience/Experience";
 import Footer from "./components/Footer";
+import GetUser from "./components/GetUser/GetUser";
 import Home from "./components/Home/Home";
 import NavBar from "./components/Navbar";
 import Preloader from "./components/Preloader";
@@ -43,6 +44,7 @@ function App() {
           <Route path="/resume" element={<Resume />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/users" element={<GetUser />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />

@@ -62,14 +62,14 @@ function Home2() {
               Feel free to <span className="purple">connect </span>with me
             </p>
             <ul className="home-about-social-links">
-              <li className="social-icons">
+              <li className="m-[10px] social-icons">
                 <a
                   href="#"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
                 >
-                  <AiFillGithub />
+                  <AiFillGithub className="m-[10px]" />
                 </a>
               </li>
               <li className="social-icons">
@@ -79,27 +79,27 @@ function Home2() {
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
                 >
-                  <AiOutlineTwitter />
+                  <AiOutlineTwitter className="m-[10px]" />
                 </a>
               </li>
-              <li className="social-icons">
+              <li className="m-[10px] social-icons">
                 <a
                   href="#"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
                 >
-                  <FaLinkedinIn />
+                  <FaLinkedinIn className="m-[10px]" />
                 </a>
               </li>
-              <li className="social-icons">
+              <li className="m-[10px] social-icons">
                 <a
                   href="#"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour home-social-icons"
+                  className=" icon-colour home-social-icons"
                 >
-                  <AiFillInstagram />
+                  <AiFillInstagram className="m-[10px]" />
                 </a>
               </li>
             </ul>
