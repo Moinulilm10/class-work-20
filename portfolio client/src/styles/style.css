@@ -565,7 +565,14 @@ button:focus {
   transition: all 0.4s ease 0s !important;
 }
 
+.single-icons {
+  margin-left: 70px;
+}
+
 @media (max-width: 767px) {
+  .single-icons {
+    margin-left: 30px;
+  }
   .tech-icons {
     margin: 10px !important;
   }

@@ -1,6 +1,5 @@
 import { Col, Row } from "react-bootstrap";
 import {
-  SiMacos,
   SiPostman,
   SiSlack,
   SiVercel,
@@ -11,19 +10,16 @@ function Toolstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       <Col xs={4} md={2} className="tech-icons">
-        <SiMacos />
+        <SiVisualstudiocode className="single-icons" />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiVisualstudiocode />
+        <SiPostman className="single-icons" />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiPostman />
+        <SiSlack className="single-icons" />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiSlack />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiVercel />
+        <SiVercel className="single-icons" />
       </Col>
     </Row>
   );
