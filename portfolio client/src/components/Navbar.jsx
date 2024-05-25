@@ -69,7 +69,7 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/about"
+                to="/experience"
                 onClick={() => updateExpanded(false)}
               >
                 <MdOutlineWork style={{ marginBottom: "2px" }} /> Experience
@@ -90,7 +90,11 @@ function NavBar() {
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link rel="noreferrer">
+              <Nav.Link
+                to="/contact"
+                as={Link}
+                onClick={() => updateExpanded(false)}
+              >
                 <RiContactsLine style={{ marginBottom: "2px" }} /> Contact
               </Nav.Link>
             </Nav.Item>
