@@ -61,7 +61,7 @@
   font-size: 16px;
   line-height: 19.36px;
   color: #1f1f1f;
-  background-color: rgba(178, 121, 216, 0.959);
+  background-color: linear-gradient(to left, rgb(27 20 41), rgb(20 15 35));
   border: 0px;
   padding-left: 14px;
   padding-top: 7px;
