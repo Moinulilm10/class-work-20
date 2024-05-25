@@ -11,7 +11,7 @@ import { CgFileDocument } from "react-icons/cg";
 import { MdOutlineWork } from "react-icons/md";
 import { RiContactsLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import logo from "../Assets/logo.png";
+import logo from "../assets/my-logo.png";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
