@@ -8,6 +8,7 @@ import {
   AiOutlineUser,
 } from "react-icons/ai";
 import { CgFileDocument } from "react-icons/cg";
+import { MdOutlineWork } from "react-icons/md";
 import { RiContactsLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import logo from "../Assets/logo.png";
@@ -62,6 +63,16 @@ function NavBar() {
                 onClick={() => updateExpanded(false)}
               >
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> About
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/about"
+                onClick={() => updateExpanded(false)}
+              >
+                <MdOutlineWork style={{ marginBottom: "2px" }} /> Experience
               </Nav.Link>
             </Nav.Item>
 
