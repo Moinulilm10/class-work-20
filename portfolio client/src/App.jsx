@@ -6,6 +6,14 @@ import {
   BrowserRouter as Router,
   Routes,
 } from "react-router-dom";
+import About from "./components/About/About";
+import Footer from "./components/Footer";
+import Home from "./components/Home/Home";
+import NavBar from "./components/Navbar";
+import Preloader from "./components/Preloader";
+import Projects from "./components/Projects/Projects";
+import Resume from "./components/Resume/Resume";
+import ScrollToTop from "./components/ScrollToTop";
 import "./styles/style.css";
 
 function App() {
@@ -23,7 +31,7 @@ function App() {
     <Router>
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
+        <NavBar />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
