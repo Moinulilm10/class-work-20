@@ -18,14 +18,14 @@ function AboutCard() {
             <br />
             Apart from coding, some other activities that I love to do!
           </p>
-          <ul>
-            <li className="about-activity">
+          <ul className="mt-6 ml-8">
+            <li className="flex flex-row gap-3 about-activity">
               <ImPointRight /> Playing Outdoor games
             </li>
-            <li className="about-activity">
+            <li className="flex flex-row gap-3 about-activity">
               <ImPointRight /> Read Tech Blogs
             </li>
-            <li className="about-activity">
+            <li className="flex flex-row gap-3 about-activity">
               <ImPointRight /> Traveling
             </li>
           </ul>
