@@ -2,9 +2,6 @@ import { Col, Container, Row } from "react-bootstrap";
 import bitsOfCode from "../../Assets/Projects/blog.png";
 import chatify from "../../Assets/Projects/chatify.png";
 import editor from "../../Assets/Projects/codeEditor.png";
-import emotion from "../../Assets/Projects/emotion.png";
-import leaf from "../../Assets/Projects/leaf.png";
-import suicide from "../../Assets/Projects/suicide.png";
 import Particle from "../Particle";
 import ProjectCard from "./ProjectCards";
 
@@ -26,8 +23,8 @@ function Projects() {
               isBlog={false}
               title="Chatify"
               description="Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
-              ghLink="https://github.com/soumyajit4419/Chatify"
-              demoLink="https://chatify-49.web.app/"
+              ghLink="#"
+              demoLink="#"
             />
           </Col>
 
@@ -37,8 +34,8 @@ function Projects() {
               isBlog={false}
               title="Bits-0f-C0de"
               description="My personal blog page build with Next.js and Tailwind Css which takes the content from makdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown."
-              ghLink="https://github.com/soumyajit4419/Bits-0f-C0de"
-              demoLink="https://blogs.soumya-jit.tech/"
+              ghLink="#"
+              demoLink="#"
             />
           </Col>
 
@@ -48,12 +45,12 @@ function Projects() {
               isBlog={false}
               title="Editor.io"
               description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage"
-              ghLink="https://github.com/soumyajit4419/Editor.io"
-              demoLink="https://editor.soumya-jit.tech/"
+              ghLink="#"
+              demoLink="#"
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          {/* <Col md={4} className="project-card">
             <ProjectCard
               imgPath={leaf}
               isBlog={false}
@@ -85,7 +82,7 @@ function Projects() {
               ghLink="https://github.com/soumyajit4419/Face_And_Emotion_Detection"
               // demoLink="https://blogs.soumya-jit.tech/"      <--------Please include a demo link here
             />
-          </Col>
+          </Col> */}
         </Row>
       </Container>
     </Container>
