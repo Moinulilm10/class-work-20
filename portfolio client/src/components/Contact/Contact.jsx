@@ -1,50 +1,50 @@
-import { useState } from "react";
-import "../../styles/Contact.css";
-import ContactForm from "./ContactForm";
+import { Col, Container, Row } from "react-bootstrap";
+// import "../../styles/Contact.css";
+import Particle from "../Particle";
+import AboutMe from "./AboutMe";
+
+// import contactMe from "../../assets/contact_me.png";
 
 const Contact = () => {
-  const [showContactForm, setShowContactForm] = useState(false);
-
-  const toggleContactForm = () => {
-    setShowContactForm((prev) => !prev);
-  };
-
   return (
-    <div className="contact-container">
-      {/* <div className="contact-header">
-        <hr className="half-width" />
-        <h2 className="contact-title ">Contact</h2>
-        <hr className="half-width" />
-      </div> */}
-      <div className="contact-content">
-        <div className="contact-description">
-          <p>
-            I am currently seeking employment,and I would appreciate it if you
-          </p>
-          <p> could contact me with any available job opportunities.</p>
-        </div>
-        <div className="contact-button " id="contact-button">
-          {showContactForm ? (
-            <button
-              type="button"
-              className="bg-primary/20"
-              onClick={toggleContactForm}
+    <Container fluid className="contact-section">
+      <Particle />
+      <Container>
+        <Row style={{ justifyContent: "center", padding: "10px" }}>
+          <Col
+            md={7}
+            style={{
+              justifyContent: "center",
+              paddingTop: "30px",
+              paddingBottom: "50px",
+            }}
+          >
+            <h1
+              style={{
+                fontSize: "2.1em",
+                paddingBottom: "20px",
+                // marginLeft: "4.5rem",
+              }}
             >
-              Close
-            </button>
-          ) : (
-            <button
-              className="bg-primary/20"
-              type="button"
-              onClick={toggleContactForm}
-            >
-              Write Message
-            </button>
-          )}
-        </div>
-      </div>
-      {showContactForm && <ContactForm />}
-    </div>
+              Contact <strong className="purple">Me</strong>
+            </h1>
+            <AboutMe />
+          </Col>
+          {/* contact image */}
+          {/* <Col
+            md={5}
+            style={{ paddingTop: "40px", paddingBottom: "50px" }}
+            className="about-img"
+          >
+            <img
+              src={contactMe}
+              alt="about"
+              className="hidden img-fluid lg:block"
+            />
+          </Col> */}
+        </Row>
+      </Container>
+    </Container>
   );
 };
 
