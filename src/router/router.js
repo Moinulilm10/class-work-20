@@ -18,7 +18,7 @@ router.get("/users", getAllUsers);
 router.post("/user", createUser);
 router.put("/user/:id", updateUser);
 router.delete("/user/:id", deleteUser);
-router.get("/user/:email", getUserByEmail);
-router.get("/user/:phone", getUserByPhone);
+router.get("/user/email/:email", getUserByEmail);
+router.get("/user/phone/:phone", getUserByPhone);
 
 module.exports = router.routes();
